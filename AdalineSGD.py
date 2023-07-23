@@ -6,7 +6,7 @@ class AdalineSGD:
         self.number_of_iterations = number_of_iterations
         self.random_state = random_state
         self.shuffle = shuffle
-
+        
     def fit(self, x, y):
         self._initialize_weights(x.shape[1])
         self.cost = []
