@@ -8,12 +8,8 @@ iris = datasets.load_iris()
 x=iris.data[:, [2, 3]]
 y=iris.target
 
-# train_test_split shuffles dataset before splittiing.
-# stratification means that training and test datasets have the same proportion of class labels.
 x_train, x_test, y_train, y_test = train_test_split(x, y, test_size=.3, random_state=1, stratify=y)
 
-# sc.fit estimates mean and standard deviation for each feature dimension.
-# sc.transform standardizes data using those estimated parameters.
 sc = StandardScaler()
 sc.fit(x_train)
 x_train_std = sc.transform(x_train)
